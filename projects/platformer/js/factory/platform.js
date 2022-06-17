@@ -8,7 +8,7 @@
         game.platforms = game.add.group();
         game.platforms.enableBody = true;
         
-        function create(x, y, scaleX, scaleY, immovable) {
+        function createPlatform(x, y, scaleX, scaleY) {
             var platform = game.platforms.create(x, y, 'platform');
             platform.scale.setTo(scaleX || 1, scaleY || 1);
             platform.body.immovable = immovable || true;
