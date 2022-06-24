@@ -75,13 +75,13 @@
 				/* Increase positionX by 10 */
 				positionX = positionX + speed;
 				moveBoxTo(positionX);
-				//use  the positionX variable, the greater than comparison operator and board.width
-				if (positionXGreater) {
+				
+				if (positionX > boardWidth) {
 					speed = -speed;
 				}
 
-				//use  the positionX variable, the less than comparison operator and 0
-				if (positionXLess) {
+				
+				if (positionX < 0) {
 					speed = +speed
 
 				}
@@ -98,13 +98,15 @@
 				positionX = 0;
 				points = points + 1;
 				changeBoxText(points);
-				speed = speed + 3
-			};
-				
-
-
-			
+				if (speed > 0) {
+					speed += 3;
+				} else if (speed < 0) {
+					speed -=3;
+				}
+					
 		
+		};
+		})();
 	</script>
 </body>
 </html>
