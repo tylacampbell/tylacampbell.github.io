@@ -24,13 +24,13 @@
      *              stretch the platform in height.
      */ 
     function init(game) {
-        let createPlatform = platform.create;
+        let createPlatform = platform.create;  // 
 
         ////////////////////////////////////////////////////////////////////////
         // ALL YOUR CODE GOES BELOW HERE ///////////////////////////////////////
         createPlatform(200, 400);
-        createPlatform(300, 400, .5);
-        createPlatform(0, 200);
+        createPlatform(300, 150,);
+        createPlatform(100, 250);
         /*
          * ground : here, we create a floor. Given the width of of the platform 
          * asset, giving it a scaleX and scaleY of 2 will stretch it across the 

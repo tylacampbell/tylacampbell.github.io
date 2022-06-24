@@ -75,9 +75,12 @@
 				/* Increase positionX by 10 */
 				positionX = positionX + speed;
 				moveBoxTo(positionX);
+				//use  the positionX variable, the greater than comparison operator and board.width
 				if (positionXGreater) {
 					speed = -speed;
 				}
+
+				//use  the positionX variable, the less than comparison operator and 0
 				if (positionXLess) {
 					speed = +speed
 
