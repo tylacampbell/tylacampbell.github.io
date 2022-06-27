@@ -18,8 +18,6 @@ var init = function (window) {
         ////////////////////////////////////////////////////////////
         ///////////////// PROGRAM SETUP ////////////////////////////
         ////////////////////////////////////////////////////////////
-        
-        // TODO 1 : Declare and initialize our variables
         var circle;
         var circles = [];
 
@@ -39,6 +37,7 @@ var init = function (window) {
         }
 
 
+
         ////////////////////////////////////////////////////////////
         ///////////////// PROGRAM LOGIC ////////////////////////////
         ////////////////////////////////////////////////////////////
@@ -50,31 +49,20 @@ var init = function (window) {
         */
         function update() {
             // TODO 4 : Update the circle's position //
-            /* Function is deleted because the updatePosition is called in the update function */
-            /*physikz.updatePosition();
-            physikz.updatePosition();
-            physikz.updatePosition();
-            physikz.updatePosition();
-            physikz.updatePosition();
 
             
             // TODO 5 / 10 : Call game.checkCirclePosition() on your circles.
-            /* Function is deleted because the circlePosition is called in the update function */
-            /*game.checkCirclePosition();
-            game.checkCirclePosition();
-            game.checkCirclePosition();
-            game.checkCirclePosition();
-            game.checkCirclePosition();*/
            
 
             // TODO 9 : Iterate over the array
-            for (var i = 0; i < drawCircle.length; i++) {
-                var eachCircle = drawCircle[i];
+            for (var j = 0; j < circles.length; j++) {
+                var eachCircle = circles[j];
                 physikz.updatePosition(eachCircle);
                 game.checkCirclePosition(eachCircle);
                 
                 // code to repeat using eachValue
              }
+            
             
         }
     
@@ -90,22 +78,22 @@ var init = function (window) {
                 circle.x = 0;
             }
             
-            // TODO 6 : YOUR CODE STARTS HERE //////////////////////
-            // if the circle has gone past the LEFT side of the screen then place it on the RIGHT
-           if ( circle.x < canvas.width ) {
+            // TODO 7 : YOUR CODE STARTS HERE //////////////////////
+            
+            if ( circle.x < 0) {
                 circle.x = canvas.width;
             }
             // if the circle has gone past the TOP of the screen then place it on the BOTTOM 
             if ( circle.y > canvas.height ) {
-                circle.y = canvas.height;
-            }
-            // if the circle has gone past the BOTTOM of the screen then place it at the TOP
-            if ( circle.y < canvas.height ) {
                 circle.y = 0;
             }
+            // if the circle has gone past the BOTTOM of the screen then place it at the TOP
+            if ( circle.y < 0) {
+                circle.y = canvas.height;
+            }
 
 
-            // YOUR TODO 6 CODE ENDS HERE //////////////////////////
+            // YOUR TODO 7 CODE ENDS HERE //////////////////////////
         }
         
         /////////////////////////////////////////////////////////////
@@ -129,4 +117,4 @@ if((typeof process !== 'undefined') &&
     (typeof process.versions.node !== 'undefined')) {
     // here, export any references you need for tests //
     module.exports = init;
-    }
+}
